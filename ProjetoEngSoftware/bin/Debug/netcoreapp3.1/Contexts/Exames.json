@@ -1,0 +1,302 @@
+[   
+    {
+        "id":1,
+        "exame":"Abdominoscopia"
+    },
+    {
+        "id":2,
+        "exame":"Abreugrafia"
+    },
+    {
+        "id":3,
+        "exame":"Adenograma"
+    },
+    {
+        "id":4,
+        "exame":"Amostragem médica"
+    },
+    {
+        "id":5,
+        "exame":"Análise molecular para a síndrome do X frágil"
+    },
+    {
+        "id":6,
+        "exame":"Antibiograma"
+    },        
+    {
+        "id":7,
+        "exame":"Anuscopia"
+    },
+    {
+        "id":8,
+        "exame":"Biópsia"
+    },
+    {
+        "id":9,
+        "exame":"Calcemia"
+    },
+    {
+        "id":10,
+        "exame":"Capnometria"
+    },
+    {
+        "id":11,
+        "exame":"Carga viral"
+    },
+    {
+        "id":12,
+        "exame":"Cartão de Guthrie"
+    },
+    {
+        "id":13,
+        "exame":"Cateterismo"
+    },
+    {
+        "id":14,
+        "exame":"Cistocentese"
+    },
+    {
+        "id":15,
+        "exame":"Citometria de fluxo"
+    },
+    {
+        "id":16,
+        "exame":"Coagulograma"
+    },
+    {
+        "id":17,
+        "exame":"Colonoscopia"
+    },
+    {
+        "id":18,
+        "exame":"Coloração diferencial"
+    },
+    {
+        "id":19,
+        "exame":"Corante Sudan"
+    },
+    {
+        "id":20,
+        "exame":"Culdoscopia"
+    },
+    {
+        "id":21,
+        "exame":"CURB-65"
+    },
+    {
+        "id":22,
+        "exame":"Densitometria óssea"
+    },
+    {
+        "id":23,
+        "exame":"Dermatoscopia"
+    },
+    {
+        "id":24,
+        "exame":"Dieta de exclusão"
+    },
+    {
+        "id":25,
+        "exame":"Doença residual mínima"
+    },
+    {
+        "id":26,
+        "exame":"Doppler transcraniano"
+    },
+    {
+        "id":27,
+        "exame":"Ecodoppler carotídeo e vertebral"
+    },
+    {
+        "id":28,
+        "exame":"Ecodoppler venoso dos membros inferiores"
+    },
+    {
+        "id":29,
+        "exame":"Elastografia"
+    },
+    {
+        "id":30,
+        "exame":"Eletronistagmografia"
+    },
+    {
+        "id":31,
+        "exame":"ELISA"
+    },
+    {
+        "id":32,
+        "exame":"Escala de Equilíbrio de Berg"
+    },
+    {
+        "id":33,
+        "exame":"Escore de Bishop"
+    },
+    {
+        "id":34,
+        "exame":"Esofagografia"
+    },
+    {
+        "id":35,
+        "exame":"Esofagograma"
+    },
+    {
+        "id":36,
+        "exame":"Espéculo"
+    },
+    {
+        "id":37,
+        "exame":"Espermograma"
+    },
+    {
+        "id":38,
+        "exame":"Espirometria"
+    },
+    {
+        "id":39,
+        "exame":"Estetoscópio"
+    },
+    {
+        "id":40,
+        "exame":"Estudo da condução nervosa"
+    },
+    {
+        "id":41,
+        "exame":"Exame pré-nupcial"
+    },
+    {
+        "id":42,
+        "exame":"Falso positivo"
+    },
+    {
+        "id":43,
+        "exame":"Gamagrafia óssea"
+    },
+    {
+        "id":44,
+        "exame":"Gasometria arterial"
+    },
+    {
+        "id":45,
+        "exame":"Glicorraquia"
+    },
+    {
+        "id":46,
+        "exame":"Glicosímetro"
+    },
+    {
+        "id":47,
+        "exame":"Glicosúria"
+    },
+    {
+        "id":48,
+        "exame":"Hemadsorção"
+    },
+    {
+        "id":49,
+        "exame":"Hemograma"
+    },
+    {
+        "id":50,
+        "exame":"Histerosalpingografia"
+    },
+    {
+        "id":51,
+        "exame":"Imagiologia Médica"
+    },
+    {
+        "id":52,
+        "exame":"Imuno-histoquímica"
+    },
+    {
+        "id":53,
+        "exame":"Imunofenotipagem"
+    },
+    {
+        "id":54,
+        "exame":"Laringoscopia"
+    },
+    {
+        "id":55,
+        "exame":"Lesão intraepitelial"
+    },
+    {
+        "id":56,
+        "exame":"Magnetoencefalografia"
+    },
+    {
+        "id":57,
+        "exame":"Manobra de Phalen"
+    },
+    {
+        "id":58,
+        "exame":"Mielografia"
+    },
+    {
+        "id":59,
+        "exame":"MRI DE Difusão"
+    },
+    {
+        "id":60,
+        "exame":"Nasofaringosopia"
+    },
+    {
+        "id":61,
+        "exame":"Nasofibrolaringoscopia"
+    },
+    {
+        "id":62,
+        "exame":"Nasofibroscopia"
+    },
+    {
+        "id":63,
+        "exame":"Neurofeedback"
+    },
+    {
+        "id":64,
+        "exame":"Neuroimagiologia"
+    },
+    {
+        "id":65,
+        "exame":"Perfil lipídico"
+    },
+    {
+        "id":66,
+        "exame":"Ph-metria esofágica"
+    },
+    {
+        "id":67,
+        "exame":"Potencial evocado"
+    },
+    {
+        "id":68,
+        "exame":"Pressão venosa central"
+    },
+    {
+        "id":69,
+        "exame":"Observação de Autismo"
+    },
+    {
+        "id":70,
+        "exame":"Prova cruzada"
+    },
+    {
+        "id":71,
+        "exame":"Prova da tuberculina"
+    },
+    {
+        "id":72,
+        "exame":"Prova da aglutinação em látex"
+    },
+    {
+        "id":73,
+        "exame":"Punção aspirativa por agulha fina"
+    },
+    {
+        "id":74,
+        "exame":"Punção lombar"
+    },
+    {
+        "id":75,
+        "exame":"Reação de Agostino"
+    }
+]
