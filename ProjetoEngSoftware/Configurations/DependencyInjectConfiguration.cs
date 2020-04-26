@@ -29,6 +29,7 @@ namespace ProjetoEngSoftware.Configurations
             services.AddTransient<MedicoResidenteRepository>();
             services.AddTransient<PerfilRepository>();
             services.AddTransient<ProfessorRepository>();
+            services.AddTransient<MedicoRepository>();
             #endregion
 
             services.AddEntityFrameworkNpgsql().AddDbContext<Context>

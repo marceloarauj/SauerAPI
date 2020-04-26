@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using ProjetoEngSoftware.Contexts;
 using ProjetoEngSoftware.DTO;
 using ProjetoEngSoftware.Models;
@@ -21,6 +23,11 @@ namespace ProjetoEngSoftware.Repositories
                 exameContext.Add(exameSave);
             }
             exameContext.SaveChanges();
+        }
+
+        public IEnumerable obterTodos(){
+
+            return exameContext.Exames.ToList();
         }
     }
 }

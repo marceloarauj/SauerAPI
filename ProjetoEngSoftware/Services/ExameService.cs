@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using ProjetoEngSoftware.DTO;
 using ProjetoEngSoftware.Repositories;
@@ -17,6 +18,10 @@ namespace ProjetoEngSoftware.Services
        }
        public void cadastrarExames(ICollection<ExameDTO> exames){
            exameRepository.cadastrarExames(exames);
+       }
+
+       public IEnumerable obterTodos(){
+           return exameRepository.obterTodos();
        }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,11 @@ namespace ProjetoEngSoftware.Controllers
         [HttpPost("carregar")]
         public void cadastrarExames([FromBody] ICollection<ExameDTO> exames){
             exameService.cadastrarExames(exames);
+        }
+
+        [HttpGet("obter")]
+        public IEnumerable obterTodos(){
+            return exameService.obterTodos();
         }
     }
 }
