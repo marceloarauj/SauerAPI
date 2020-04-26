@@ -8,7 +8,7 @@ namespace ProjetoEngSoftware.Models
     public class Paciente
     {
 
-        public int Id {get;set;}
+        public string Cpf {get;set;}
         public string Nome {get;set;}
         public char Sexo {get;set;}
         public Etnia Etnia {get;set;}
