@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,7 @@ namespace ProjetoEngSoftware.Controllers
         }
         private ExameService exameService;
 
-        [Authorize(Roles = "Medico,Professor,Residente")]   
+        //[Authorize(Roles = "Medico,Professor,Residente")]   
         [HttpPost("criar")]
         public ActionResult<string> criarPedidoExame([FromBody]PedidoExameDTO exame){
             
@@ -27,6 +28,16 @@ namespace ProjetoEngSoftware.Controllers
         [HttpPost("carregar")]
         public void cadastrarExames([FromBody] ICollection<ExameDTO> exames){
             exameService.cadastrarExames(exames);
+        }
+
+        [HttpGet("obter-exames")]
+        public IEnumerable obterTodos(){
+            return exameService.obterTodos();
+        }
+
+        [HttpGet("obter-pedidos")]
+        public IEnumerable obterTodosPedidos(){
+            return exameService.obterTodosPedidos();
         }
     }
 }

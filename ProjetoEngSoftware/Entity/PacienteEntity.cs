@@ -13,7 +13,7 @@ namespace ProjetoEngSoftware.Entity
             builder.Property(x => x.Cpf).HasColumnName("cpf_paciente");
             builder.Property(x => x.DataNascimento).HasColumnName("dt_nascimento");
             builder.Property(x => x.Sexo).HasColumnName("tp_sexo");
-            builder.HasOne(x => x.Etnia);
+            builder.HasOne(x => x.Etnia).WithMany().HasForeignKey(e => e.IdEtnia);
             builder.Property(x => x.Nome).HasColumnName("nm_paciente");
         }
     }

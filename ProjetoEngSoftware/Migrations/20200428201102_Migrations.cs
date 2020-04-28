@@ -53,22 +53,21 @@ namespace ProjetoEngSoftware.Migrations
                 name: "tb_paciente",
                 columns: table => new
                 {
-                    id_paciente = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    cpf_paciente = table.Column<string>(nullable: false),
                     nm_paciente = table.Column<string>(nullable: true),
                     tp_sexo = table.Column<char>(nullable: false),
-                    EtniaId = table.Column<int>(nullable: true),
+                    IdEtnia = table.Column<int>(nullable: false),
                     dt_nascimento = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tb_paciente", x => x.id_paciente);
+                    table.PrimaryKey("PK_tb_paciente", x => x.cpf_paciente);
                     table.ForeignKey(
-                        name: "FK_tb_paciente_tb_etnia_EtniaId",
-                        column: x => x.EtniaId,
+                        name: "FK_tb_paciente_tb_etnia_IdEtnia",
+                        column: x => x.IdEtnia,
                         principalTable: "tb_etnia",
                         principalColumn: "id_etnia",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -132,9 +131,9 @@ namespace ProjetoEngSoftware.Migrations
                 {
                     IdPedidoExame = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    PacienteId = table.Column<int>(nullable: true),
-                    MedicoIdMedico = table.Column<int>(nullable: true),
-                    ExameId = table.Column<int>(nullable: true),
+                    CpfPaciente = table.Column<string>(nullable: true),
+                    IdMedico = table.Column<int>(nullable: false),
+                    IdExame = table.Column<int>(nullable: false),
                     dt_exame = table.Column<DateTime>(nullable: false),
                     ds_hipotese_diagnostica = table.Column<string>(nullable: true),
                     ds_recomendacoes = table.Column<string>(nullable: true)
@@ -143,23 +142,23 @@ namespace ProjetoEngSoftware.Migrations
                 {
                     table.PrimaryKey("PK_tb_pedido_exame", x => x.IdPedidoExame);
                     table.ForeignKey(
-                        name: "FK_tb_pedido_exame_tb_exame_ExameId",
-                        column: x => x.ExameId,
+                        name: "FK_tb_pedido_exame_tb_paciente_CpfPaciente",
+                        column: x => x.CpfPaciente,
+                        principalTable: "tb_paciente",
+                        principalColumn: "cpf_paciente",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_tb_pedido_exame_tb_exame_IdExame",
+                        column: x => x.IdExame,
                         principalTable: "tb_exame",
                         principalColumn: "id_exame",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_tb_pedido_exame_tb_medico_MedicoIdMedico",
-                        column: x => x.MedicoIdMedico,
+                        name: "FK_tb_pedido_exame_tb_medico_IdMedico",
+                        column: x => x.IdMedico,
                         principalTable: "tb_medico",
                         principalColumn: "id_medico",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_tb_pedido_exame_tb_paciente_PacienteId",
-                        column: x => x.PacienteId,
-                        principalTable: "tb_paciente",
-                        principalColumn: "id_paciente",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -201,24 +200,24 @@ namespace ProjetoEngSoftware.Migrations
                 column: "MedicoLaudoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_paciente_EtniaId",
+                name: "IX_tb_paciente_IdEtnia",
                 table: "tb_paciente",
-                column: "EtniaId");
+                column: "IdEtnia");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_pedido_exame_ExameId",
+                name: "IX_tb_pedido_exame_CpfPaciente",
                 table: "tb_pedido_exame",
-                column: "ExameId");
+                column: "CpfPaciente");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_pedido_exame_MedicoIdMedico",
+                name: "IX_tb_pedido_exame_IdExame",
                 table: "tb_pedido_exame",
-                column: "MedicoIdMedico");
+                column: "IdExame");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tb_pedido_exame_PacienteId",
+                name: "IX_tb_pedido_exame_IdMedico",
                 table: "tb_pedido_exame",
-                column: "PacienteId");
+                column: "IdMedico");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -239,10 +238,10 @@ namespace ProjetoEngSoftware.Migrations
                 name: "tb_residente");
 
             migrationBuilder.DropTable(
-                name: "tb_exame");
+                name: "tb_paciente");
 
             migrationBuilder.DropTable(
-                name: "tb_paciente");
+                name: "tb_exame");
 
             migrationBuilder.DropTable(
                 name: "tb_medico");

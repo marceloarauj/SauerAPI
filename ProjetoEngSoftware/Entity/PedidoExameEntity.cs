@@ -14,9 +14,9 @@ namespace ProjetoEngSoftware.Entity
             builder.Property(x => x.DataExame).HasColumnName("dt_exame");
             builder.Property(x => x.HipoteseDiagnostica).HasColumnName("ds_hipotese_diagnostica");
             builder.Property(x => x.Recomendacoes).HasColumnName("ds_recomendacoes");
-            builder.HasOne(x => x.Exame);
-            builder.HasOne(x => x.Medico);
-            builder.HasOne(x => x.Paciente);
+            builder.HasOne(x => x.Exame).WithMany().HasForeignKey(p => p.IdExame);
+            builder.HasOne(x => x.Medico).WithMany().HasForeignKey(p => p.IdMedico);
+            builder.HasOne(x => x.Paciente).WithMany().HasForeignKey(p => p.CpfPaciente);
         }
     }
 }

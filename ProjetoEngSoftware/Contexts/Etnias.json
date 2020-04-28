@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "descricao":"branca"
+    },
+    {
+        "id":2,
+        "descricao":"negra"
+    },
+    {
+        "id":3,
+        "descricao":"parda"
+    },
+    {
+        "id":4,
+        "descricao":"amarela"
+    },
+    {
+        "id":5,
+        "descricao":"indígena"
+    },
+    {
+        "id":6,
+        "descricao":"Outro"
+    }
+]

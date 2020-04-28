@@ -160,3 +160,4 @@ C:\Users\marcelo.araujo\Documents\Projetos\ProjetoSauerApi\GrupoSauer\ProjetoEng
 C:\Users\marcelo.araujo\Documents\Projetos\ProjetoSauerApi\GrupoSauer\ProjetoEngSoftware\obj\Debug\netcoreapp3.1\ProjetoEngSoftware.dll
 C:\Users\marcelo.araujo\Documents\Projetos\ProjetoSauerApi\GrupoSauer\ProjetoEngSoftware\obj\Debug\netcoreapp3.1\ProjetoEngSoftware.pdb
 C:\Users\marcelo.araujo\Documents\Projetos\ProjetoSauerApi\GrupoSauer\ProjetoEngSoftware\obj\Debug\netcoreapp3.1\ProjetoEngSoftware.genruntimeconfig.cache
+C:\Users\marcelo.araujo\Documents\Projetos\ProjetoSauerApi\GrupoSauer\ProjetoEngSoftware\bin\Debug\netcoreapp3.1\Contexts\Etnias.json

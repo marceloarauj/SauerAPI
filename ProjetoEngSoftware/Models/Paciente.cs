@@ -7,11 +7,11 @@ namespace ProjetoEngSoftware.Models
 
     public class Paciente
     {
-
         public string Cpf {get;set;}
         public string Nome {get;set;}
         public char Sexo {get;set;}
         public Etnia Etnia {get;set;}
+        public int IdEtnia {get;set;}
         public DateTime DataNascimento{get;set;}
     }
 }

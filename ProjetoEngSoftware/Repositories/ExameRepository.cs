@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using ProjetoEngSoftware.Contexts;
 using ProjetoEngSoftware.DTO;
 using ProjetoEngSoftware.Models;
@@ -21,6 +23,32 @@ namespace ProjetoEngSoftware.Repositories
                 exameContext.Add(exameSave);
             }
             exameContext.SaveChanges();
+        }
+
+        public IEnumerable obterTodos(){
+
+            return exameContext.Exames.ToList();
+        }
+
+        public bool criarPedidoExame(PedidoExameDTO dados){
+            PedidoExame pedido = new PedidoExame{
+                DataExame = dados.DataExame,
+                HipoteseDiagnostica = dados.HipoteseDiagnostica,
+                Recomendacoes = dados.Recomendacoes,
+                CpfPaciente = dados.Paciente.Cpf,
+                IdExame = dados.IdExame,
+                IdMedico = dados.IdMedico,
+            };
+            
+            exameContext.PedidoExames.Add(pedido);
+            exameContext.SaveChanges();
+
+            return true;
+        }
+
+        public IEnumerable obterTodosPedidos(){
+            
+            return exameContext.PedidoExames.ToList(); 
         }
     }
 }

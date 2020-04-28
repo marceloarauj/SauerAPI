@@ -4,7 +4,7 @@ namespace ProjetoEngSoftware.DTO
 {
     public class PacienteDTO
     {
-        public string CpfCliente {get;set;}
+        public string Cpf {get;set;}
         public string Nome{get;set;}
         public DateTime Nascimento{get;set;}
         public char Sexo {get;set;}

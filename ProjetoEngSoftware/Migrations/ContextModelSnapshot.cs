@@ -158,17 +158,15 @@ namespace ProjetoEngSoftware.Migrations
 
             modelBuilder.Entity("ProjetoEngSoftware.Models.Paciente", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("id_paciente")
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                    b.Property<string>("Cpf")
+                        .HasColumnName("cpf_paciente")
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnName("dt_nascimento")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int?>("EtniaId")
+                    b.Property<int>("IdEtnia")
                         .HasColumnType("integer");
 
                     b.Property<string>("Nome")
@@ -179,9 +177,9 @@ namespace ProjetoEngSoftware.Migrations
                         .HasColumnName("tp_sexo")
                         .HasColumnType("character(1)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Cpf");
 
-                    b.HasIndex("EtniaId");
+                    b.HasIndex("IdEtnia");
 
                     b.ToTable("tb_paciente");
                 });
@@ -193,21 +191,21 @@ namespace ProjetoEngSoftware.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<string>("CpfPaciente")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("DataExame")
                         .HasColumnName("dt_exame")
                         .HasColumnType("timestamp without time zone");
-
-                    b.Property<int?>("ExameId")
-                        .HasColumnType("integer");
 
                     b.Property<string>("HipoteseDiagnostica")
                         .HasColumnName("ds_hipotese_diagnostica")
                         .HasColumnType("text");
 
-                    b.Property<int?>("MedicoIdMedico")
+                    b.Property<int>("IdExame")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("PacienteId")
+                    b.Property<int>("IdMedico")
                         .HasColumnType("integer");
 
                     b.Property<string>("Recomendacoes")
@@ -216,11 +214,11 @@ namespace ProjetoEngSoftware.Migrations
 
                     b.HasKey("IdPedidoExame");
 
-                    b.HasIndex("ExameId");
+                    b.HasIndex("CpfPaciente");
 
-                    b.HasIndex("MedicoIdMedico");
+                    b.HasIndex("IdExame");
 
-                    b.HasIndex("PacienteId");
+                    b.HasIndex("IdMedico");
 
                     b.ToTable("tb_pedido_exame");
                 });
@@ -267,22 +265,28 @@ namespace ProjetoEngSoftware.Migrations
                 {
                     b.HasOne("ProjetoEngSoftware.Models.Etnia", "Etnia")
                         .WithMany()
-                        .HasForeignKey("EtniaId");
+                        .HasForeignKey("IdEtnia")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProjetoEngSoftware.Models.PedidoExame", b =>
                 {
+                    b.HasOne("ProjetoEngSoftware.Models.Paciente", "Paciente")
+                        .WithMany()
+                        .HasForeignKey("CpfPaciente");
+
                     b.HasOne("ProjetoEngSoftware.Models.Exame", "Exame")
                         .WithMany()
-                        .HasForeignKey("ExameId");
+                        .HasForeignKey("IdExame")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ProjetoEngSoftware.Models.Medico", "Medico")
                         .WithMany()
-                        .HasForeignKey("MedicoIdMedico");
-
-                    b.HasOne("ProjetoEngSoftware.Models.Paciente", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("PacienteId");
+                        .HasForeignKey("IdMedico")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
