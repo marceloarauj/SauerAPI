@@ -2,10 +2,11 @@ namespace ProjetoEngSoftware.Models
 {
     public class Laudo
     {
-        public int Id {get;set;}
-        public Exame Exame {get;set;}
-        public MedicoResidente MedicoLaudo {get;set;}
+        public int IdPedidoExame {get;set;}
+        public int IdMedicoLaudo {get; set;}
+        public int IdMedicoAprovacao {get;set;}
         public string DescricaoLaudo {get;set;}
-        public bool Status {get;set;}
+        public string MotivoRecusa {get;set;}
+        public char Status {get;set;} /* A = Aprovado , E = Esperando aprovação, R = Recusado */
     }
 }

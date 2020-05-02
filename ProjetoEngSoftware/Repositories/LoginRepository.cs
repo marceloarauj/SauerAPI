@@ -35,16 +35,19 @@ namespace ProjetoEngSoftware.Repositories
             if(residente != null)
                 return new PerfilDTO{Login = loginUser.UserLogin,
                                      UserRole = "Residente",
-                                     Nome = medico.Nome};
+                                     Nome = medico.Nome,
+                                     IdMedico = medico.IdMedico};
 
             if(professor != null)
                 return new PerfilDTO{Login = loginUser.UserLogin,
                                      UserRole = "Professor",
-                                     Nome = medico.Nome};
+                                     Nome = medico.Nome,
+                                     IdMedico = medico.IdMedico};
 
             return new PerfilDTO{Login = loginUser.UserLogin,
                                  UserRole = "Medico",
-                                 Nome = medico.Nome};             
+                                 Nome = medico.Nome,
+                                 IdMedico = medico.IdMedico};             
         }
     }
 }

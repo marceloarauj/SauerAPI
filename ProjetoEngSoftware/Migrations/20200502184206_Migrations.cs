@@ -35,6 +35,23 @@ namespace ProjetoEngSoftware.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "tb_laudo",
+                columns: table => new
+                {
+                    id_laudo = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    id_medico_laudo = table.Column<int>(nullable: false),
+                    id_medico_aprovacao = table.Column<int>(nullable: false),
+                    ds_laudo = table.Column<string>(nullable: true),
+                    ds_recusa = table.Column<string>(nullable: true),
+                    status = table.Column<char>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tb_laudo", x => x.id_laudo);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "tb_medico",
                 columns: table => new
                 {
@@ -160,44 +177,6 @@ namespace ProjetoEngSoftware.Migrations
                         principalColumn: "id_medico",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "tb_laudo",
-                columns: table => new
-                {
-                    id_laudo = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    ExameId = table.Column<int>(nullable: true),
-                    MedicoLaudoId = table.Column<int>(nullable: true),
-                    DescricaoLaudo = table.Column<string>(nullable: true),
-                    status = table.Column<bool>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_tb_laudo", x => x.id_laudo);
-                    table.ForeignKey(
-                        name: "FK_tb_laudo_tb_exame_ExameId",
-                        column: x => x.ExameId,
-                        principalTable: "tb_exame",
-                        principalColumn: "id_exame",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_tb_laudo_tb_residente_MedicoLaudoId",
-                        column: x => x.MedicoLaudoId,
-                        principalTable: "tb_residente",
-                        principalColumn: "id_residente",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_tb_laudo_ExameId",
-                table: "tb_laudo",
-                column: "ExameId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_tb_laudo_MedicoLaudoId",
-                table: "tb_laudo",
-                column: "MedicoLaudoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tb_paciente_IdEtnia",

@@ -9,11 +9,13 @@ namespace ProjetoEngSoftware.Entity
         public void Configure(EntityTypeBuilder<Laudo> builder)
         {
             builder.ToTable("tb_laudo");
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName("id_laudo");
+            builder.HasKey(x => x.IdPedidoExame);
+            builder.Property(x => x.IdPedidoExame).HasColumnName("id_laudo");
             builder.Property(x => x.Status).HasColumnName("status");
-            builder.HasOne(x => x.MedicoLaudo);
-            builder.HasOne(x => x.Exame);
+            builder.Property(x => x.DescricaoLaudo).HasColumnName("ds_laudo");
+            builder.Property(x => x.MotivoRecusa).HasColumnName("ds_recusa");
+            builder.Property(x => x.IdMedicoAprovacao).HasColumnName("id_medico_aprovacao");
+            builder.Property(x => x.IdMedicoLaudo).HasColumnName("id_medico_laudo");
         }
     }
 }

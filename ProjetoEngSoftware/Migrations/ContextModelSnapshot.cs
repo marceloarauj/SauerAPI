@@ -55,30 +55,33 @@ namespace ProjetoEngSoftware.Migrations
 
             modelBuilder.Entity("ProjetoEngSoftware.Models.Laudo", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdPedidoExame")
                         .ValueGeneratedOnAdd()
                         .HasColumnName("id_laudo")
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("DescricaoLaudo")
+                        .HasColumnName("ds_laudo")
                         .HasColumnType("text");
 
-                    b.Property<int?>("ExameId")
+                    b.Property<int>("IdMedicoAprovacao")
+                        .HasColumnName("id_medico_aprovacao")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("MedicoLaudoId")
+                    b.Property<int>("IdMedicoLaudo")
+                        .HasColumnName("id_medico_laudo")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("Status")
+                    b.Property<string>("MotivoRecusa")
+                        .HasColumnName("ds_recusa")
+                        .HasColumnType("text");
+
+                    b.Property<char>("Status")
                         .HasColumnName("status")
-                        .HasColumnType("boolean");
+                        .HasColumnType("character(1)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExameId");
-
-                    b.HasIndex("MedicoLaudoId");
+                    b.HasKey("IdPedidoExame");
 
                     b.ToTable("tb_laudo");
                 });
@@ -221,17 +224,6 @@ namespace ProjetoEngSoftware.Migrations
                     b.HasIndex("IdMedico");
 
                     b.ToTable("tb_pedido_exame");
-                });
-
-            modelBuilder.Entity("ProjetoEngSoftware.Models.Laudo", b =>
-                {
-                    b.HasOne("ProjetoEngSoftware.Models.Exame", "Exame")
-                        .WithMany()
-                        .HasForeignKey("ExameId");
-
-                    b.HasOne("ProjetoEngSoftware.Models.MedicoResidente", "MedicoLaudo")
-                        .WithMany()
-                        .HasForeignKey("MedicoLaudoId");
                 });
 
             modelBuilder.Entity("ProjetoEngSoftware.Models.Login", b =>
