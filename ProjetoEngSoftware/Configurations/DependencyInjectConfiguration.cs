@@ -37,8 +37,8 @@ namespace ProjetoEngSoftware.Configurations
             #endregion
 
             string URL = Environment.GetEnvironmentVariable("DATABASE_URL");
-            string connection = "Host="+URL+";Port=5432;Database=sauer;User Id=postgres;Password=1234;sslmode=Prefer;Trust Server Certificate=true";
-
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.WriteLine(URL);
             // services.AddEntityFrameworkNpgsql().AddDbContext<Context>
             //     (options =>options.UseNpgsql(configuration.GetConnectionString("SauerBD")));
             services.AddEntityFrameworkNpgsql().AddDbContext<Context>
