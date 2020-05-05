@@ -36,9 +36,11 @@ namespace ProjetoEngSoftware.Configurations
             services.AddTransient<PacienteRepository>();
             #endregion
 
-            string URL = Environment.GetEnvironmentVariable("DATABASE_URL");
-            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            Console.WriteLine(URL);
+            string Database = "d2d0es6177uqdb";
+            string user = "hinzrvsvoxqyti";
+            string password = "6f833a813d66fc006b27bc0f50c42e3967b1da33d90745bdf55c3f8179eca147";
+            string host = "ec2-54-88-130-244.compute-1.amazonaws.com";
+            string URL = "Host="+host+";Port=5432;Database="+Database+";User Id="+user+";Password="+password+";sslmode=Prefer;Trust Server Certificate=true";
             // services.AddEntityFrameworkNpgsql().AddDbContext<Context>
             //     (options =>options.UseNpgsql(configuration.GetConnectionString("SauerBD")));
             services.AddEntityFrameworkNpgsql().AddDbContext<Context>
