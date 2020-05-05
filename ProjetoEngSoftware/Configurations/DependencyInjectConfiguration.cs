@@ -4,6 +4,7 @@ using ProjetoEngSoftware.Contexts;
 using Microsoft.Extensions.Configuration;
 using ProjetoEngSoftware.Services;
 using ProjetoEngSoftware.Repositories;
+using System;
 
 namespace ProjetoEngSoftware.Configurations
 {
@@ -34,6 +35,12 @@ namespace ProjetoEngSoftware.Configurations
             services.AddTransient<EtniaRepository>();
             services.AddTransient<PacienteRepository>();
             #endregion
+
+            // string URL = Environment.GetEnvironmentVariable("DATABASE_URL");
+            // string user = "postgres";
+            // string password = "1234";
+            
+            // string connection = "Host = "+ URL +";User Id="+user + ";Password="+password +";Use SSL Stream=True;";
 
             services.AddEntityFrameworkNpgsql().AddDbContext<Context>
                 (options =>options.UseNpgsql(configuration.GetConnectionString("SauerBD")));                 
