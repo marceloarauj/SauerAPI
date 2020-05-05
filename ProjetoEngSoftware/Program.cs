@@ -22,5 +22,6 @@ namespace ProjetoEngSoftware
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+        
     }
 }
