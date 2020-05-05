@@ -10,7 +10,7 @@ using ProjetoEngSoftware.Contexts;
 namespace ProjetoEngSoftware.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20200502184206_Migrations")]
+    [Migration("20200505204117_Migrations")]
     partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
