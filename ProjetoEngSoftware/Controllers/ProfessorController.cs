@@ -1,4 +1,6 @@
+using System.Collections;
 using Microsoft.AspNetCore.Mvc;
+using ProjetoEngSoftware.Services;
 
 namespace ProjetoEngSoftware.Controllers
 {
@@ -6,17 +8,14 @@ namespace ProjetoEngSoftware.Controllers
     [Route("[controller]")]
     public class ProfessorController:ControllerBase
     {
-        [HttpGet("{idProfessor}")]
-        public string obterProfessor(int idProfessor){
-            return "sucesso !" + idProfessor;
+        public ProfessorController(ProfessorService professorService){
+            this.professorService = professorService;
         }
-        [HttpPost]
-        public void cadastrarProfessor(){
-
-        }
-        [HttpPut]
-        public void alterarProfessor(){
-
+        private ProfessorService professorService;
+        
+        [HttpGet]
+        public IEnumerable obterTodos(){
+            return professorService.obterTodos();
         }
     }
 }

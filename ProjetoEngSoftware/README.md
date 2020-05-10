@@ -20,5 +20,5 @@ dotnet ef database update --context Context
 https://docs.microsoft.com/pt-br/ef/ef6/modeling/code-first/fluent/relationships
 
 
-# Deploy
+# Deploy no heroku
 https://elements.heroku.com/buildpacks/jincod/dotnetcore-buildpack
